@@ -1,3 +1,98 @@
+////函数返回两个数需要分配一个动态数组，然后return
+//int* twoSum(int* nums, int numsSize, int target) {
+//	int a, b;
+//	for (int cou1 = 0; cou1 < numsSize; cou1++){
+//		for (int cou2 = cou1 + 1; cou2 < numsSize; cou2++){
+//			if ((nums[cou1] + nums[cou2]) == target){
+//				a = cou1;
+//				b = cou2;
+//				break;
+//			}
+//		}
+//	}
+//	int *array = (int *)malloc(sizeof(int)* 2);
+//	array[0] = a;
+//	array[1] = b;
+//	return array;
+//}
+
+//// 编写程序数一下 1到 100 的所有整数中出现多少次数字9。
+////分为三部分个位(unit)9，19，……99（99有两个）
+////十位(decade)90……99（两次都到99）
+//#include <stdio.h>
+//#include <stdlib.h>
+//int Isnine(int a){
+//	if (a % 10 == 9 && a / 10 == 9){
+//		return 2;//99
+//	}
+//	if (a % 10 == 9){//个位
+//		return 1;
+//	}
+//	if (a / 10 == 9){//十位
+//		return 1;
+//	}
+//	return 0;	
+//}
+//int main(){
+//	int num, count=0;
+//	for (num = 1; num <= 100; num++){//for循环访问1-100
+//		if (Isnine(num)){
+//			count++;
+//			if (Isnine(num) == 2){
+//				count++;
+//			}
+//		}
+//	}
+//	printf("1到100中9的个数为：%d\n ", count);
+//	system("pause");
+//	return 0;
+//}
+
+////计算1/1-1/2+1/3-1/4+1/5 …… + 1/99 - 1/100 的值。 
+////奇数加偶数减
+//#include <stdio.h>
+//#include <stdlib.h>
+//double Isfz(int fm){
+//	if (fm % 2 == 0){
+//		return -1.0;
+//	}
+//	return 1.0;
+//}
+//int main(){
+//	double sum = 0, fm,fz;//分母（fm） 分子（fz）
+//	for (fm = 1; fm <=100; fm++){//for循环访问fz的1-100
+//		fz = Isfz(fm);
+//		sum = fz / fm + sum;
+//	}
+//	printf("1/1-1/2+1/3-1/4+1/5 …… + 1/99 - 1/100=%f", sum);
+//	system("pause");
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main(){
+//	int a[3] = {1,2,3};//数组内容的交换
+//	int b[3] = {3,2,1};
+//	int i;
+//	for (i = 0; i < 3; i++){//for循环访问所有数组值
+//		int temp;
+//		temp = a[i];
+//		a[i] = b[i];
+//		b[i] = temp;
+//	}
+//	printf("a= ");
+//	for (i = 0; i < 3; i++){
+//		printf("%d ", a[i]);
+//	}
+//	printf("\nb= ");
+//	for (i = 0; i < 3; i++){
+//		printf("%d ", b[i]);
+//	}
+//	system("pause");
+//	return 0; 
+//}
+
 //#include <stdio.h>
 //#include <stdlib.h>
 //int main(){
@@ -131,8 +226,6 @@
 //	system("pause");
 //	return 0;
 //}
-//
-//
 
 //#include <stdio.h>
 //#include <stdlib.h>
