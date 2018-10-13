@@ -1,32 +1,32 @@
-////打印出一个菱形
-//#include <stdio.h>
-//#include <stdlib.h>
-//#define breadth 12//最中间的宽度包括\0
-//#define middle breadth / 2-1
-//void prtdiamond(char diamond[],int x){
-//	int left;
-//	int right;
-//	char ch = '*';
-//	for (left = 0, right = 0; left < middle + 1; left++, right++){
-//		diamond[middle - left] = ch;
-//		diamond[middle + right] = ch;
-//		printf("%s\n", diamond);
-//
-//	}//上半段菱形
-//
-//	ch = ' ';
-//	for (left = middle, right = middle; left > 0; left--, right--){
-//		diamond[middle - left] = ch;
-//		diamond[middle + right] = ch;
-//		printf("%s\n", diamond);
-//	}
-//}
-//int main(){
-//	char diamond[breadth] = "           ";//找中间注意\0的储存
-//	prtdiamond(diamond, middle);
-//	system("pause");
-//	return 0;
-//}
+//打印出一个菱形
+#include <stdio.h>
+#include <stdlib.h>
+#define Breadth 8//最中间的宽度包括\0
+#define Middle Breadth / 2-1
+void prtdiamond(char diamond[],int x){
+	int left;
+	int right;
+	char ch = '*';
+	for (left = 0, right = 0; left < Middle+1; left++, right++){
+		diamond[Middle - left] = ch;//向左打印
+		diamond[Middle + right] = ch;//向右打印
+		printf("%s\n", diamond);
+
+	}//上半段菱形
+
+	ch = ' ';
+	for (left = Middle, right = Middle; left > 0; left--, right--){
+		diamond[Middle - left] = ch;
+		diamond[Middle + right] = ch;
+		printf("%s\n", diamond);
+	}
+}
+int main(){
+	char diamond[Breadth] = "       ";//找中间注意\0的储存
+	prtdiamond(diamond, Middle);
+	system("pause");
+	return 0;
+}
 
 //////////////////////////////////////////////
 //输出水仙花数，水仙花数是指一个 n 位数（n≥3 ）
