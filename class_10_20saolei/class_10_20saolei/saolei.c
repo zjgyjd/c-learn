@@ -20,10 +20,16 @@ int Menue(){
 	printf("*0.结束游戏*\n");
 	printf("************\n");
 	int num;
-	scanf("%d", &num);
-	while (num != 0 && num != 1){
-		printf("请输入正确数字asa\n");
+	while (1){
 		scanf("%d", &num);
+		while (getchar() != '\n'){
+			continue;
+		}
+		if (num != 0 && num != 1){
+			printf("请输入正确数字asa\n");
+			continue;
+		}
+		break;
 	}
 	return num;
 }
@@ -158,10 +164,20 @@ int Playchoice(){
 	printf("请玩家输入坐标:\n");
 	int row;
 	int col;
-	scanf("%d %d", &row, &col);
-	while (row<1 || row>ROW || col<1 || col>COL){
-		printf("请输入有效值:\n");
+	while (1){
 		scanf("%d %d", &row, &col);
+		while (getchar() != '\n'){
+			continue;
+		}
+		if (row<1 || row>ROW || col<1 || col>COL){
+			printf("请输入有效值:\n");
+			continue;
+		}
+		if (show_map[row][col]!='0'){
+			printf("此处已经被点开,请重新下输入:\n");
+			continue;
+		}
+			break;
 	}
 	//判断是否为地雷
 	if (mine_map[row][col] == '*'){
