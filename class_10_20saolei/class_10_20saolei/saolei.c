@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <windows.h>
+#include <mmsystem.h>//导入声音头文件
+#pragma comment(lib,"Winmm.lib")
 //两个二维数组分别代表空白部分和雷区
 #define ROW 9
 #define COL 9
@@ -208,6 +211,7 @@ void Start(){
 			int result = Playchoice();
 			//判断游戏是否结束
 			if (result == 1){
+				PlaySound("d:\\BOM.wav", NULL, SND_FILENAME | SND_ASYNC);
 				printf("失败!!!!\n");
 				//打印地图位置即mine_map
 				Prtmap(2);
