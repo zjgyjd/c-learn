@@ -7,8 +7,6 @@
 #define Chess 5//表示三子棋
 //1.定义一个全局变量数组
 char g_chesses[ROW][COL];//初始化
-int Computer[ROW][COL][4];//代表横竖左斜右斜
-int Player[ROW][COL][4];//存储棋型找最优解,按照棋型的重要程度给出一个分
 void reset();
 void Prtboard();
 void PlayerMove();
@@ -55,14 +53,7 @@ void reset( ){//重置
 			g_chesses[row][col] = ' ';
 		}
 	}
-	for (int row = 0; row < ROW; row++){
-		for (int col = 0; col < ROW; col++){
-			for (int look = 0; look < 4; look++){
-				Computer[row][col][look] = 0;//look代表横竖左斜右斜
-				Player[row][col][look] = 0;//初始化
-			}
-		}
-	}
+	
 }
 void Prtboard(){
 	int row = 0;
@@ -94,6 +85,9 @@ void PlayerMove(){//1.利用坐标进行移动
 	int col = -1;
 	while (1){
 		scanf("%d %d", &row, &col);
+		while (getchar() != '\n'){
+			continue;
+		}
 		row -= 1;
 		col = col-1;
 		if (row < 0 || row >= ROW || col < 0 || col >= COL){//越界
