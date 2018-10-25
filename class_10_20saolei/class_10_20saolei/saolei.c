@@ -10,7 +10,7 @@
 //两个二维数组分别代表空白部分和雷区
 #define ROW 9
 #define COL 9
-#define Minenum 10//设置雷数
+#define Minenum 1//设置雷数
 char mine_map[ROW + 2][COL + 2];//加边框//初始化为'0'
 char show_map[ROW + 2][COL + 2];//初始化为'0'
 void Reset(){
@@ -212,14 +212,14 @@ void Start(){
 			//判断游戏是否结束
 			if (result == 1){
 				PlaySound("d:\\BOM.wav", NULL, SND_FILENAME | SND_ASYNC);
-				printf("失败!!!!\n");
 				//打印地图位置即mine_map
 				Prtmap(2);
+				printf("失败!!!!\n");
 				break;
 			}
 			else if (result == 2){
-				printf("恭喜玩家胜利!!!!!\n");
 				Prtmap(2);
+				printf("恭喜玩家胜利!!!!!\n");
 				break;
 			}
 		}
